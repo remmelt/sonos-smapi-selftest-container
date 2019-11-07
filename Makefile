@@ -6,4 +6,9 @@ build:
 
 .PHONY: run
 run:
-	docker run --rm -it -v ${PWD}/logs:/test/smapi/content_workflow/log_files -v ${PWD}/conf:/test/smapi/service_configs sonos-test
+	docker run \
+		--rm --interactive --tty \
+		--network host \
+		--volume ${PWD}/logs:/test/smapi/content_workflow/log_files \
+		--volume ${PWD}/conf:/test/smapi/service_configs \
+		sonos-test
