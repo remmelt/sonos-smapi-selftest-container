@@ -2,7 +2,7 @@ PWD := $(shell pwd)
 
 .PHONY: build
 build:
-	docker build -t sonos-test .
+	docker build --tag sonos-test --no-cache --pull .
 
 .PHONY: run
 run:
